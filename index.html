@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/86162752?v=4" />
+    <title>Locator</title>
+</head>
+<body>
+
+    <header>
+        <center>
+            <h1 class="title">Locator</h1>
+        </center>
+    </header>
+
+    <center>
+        <input id="ip-input"  
+            autofocus
+            placeholder="target ip"
+            type="text"
+            onkeydown="if(event.keyCode===13) getValue('None');">
+    </center>
+
+    <div class="card">
+        <h2 id="address">Address : </h2>
+        <h2 id="country">Country : </h2>
+        <h2 id="region">Region : </h2>
+        <h2 id="city">City : </h2>
+        <h2 id="zip-code">Zip-Code : </h2>
+        <h2 id="lat">Latitude : </h2>
+        <h2 id="lon">Longitude : </h2>
+        <h2 id="ping">Ping : </h2>
+        <h2><a id="openinmaps" target="_blank" href=""></a></h2>
+    </div>
+
+    <footer>
+        <center>
+            <h2 id="your_ip"></h2>
+            <h2>Made by ValentinLvrr</h2>
+        </center>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
