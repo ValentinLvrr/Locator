@@ -1,1 +1,1 @@
-# [`Hosted here`](https://valentinlvrr.github.io/Locator/)
+# [`Locator is hosted here`](https://valentinlvrr.github.io/Locator/)
