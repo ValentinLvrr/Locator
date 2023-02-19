@@ -17,6 +17,7 @@ header {
     margin-bottom: 40px;
     height: 110px;
 }
+
 h1.title {
     font-size: 45px;
 }
@@ -26,12 +27,13 @@ h1.title {
 /* ----------------- */
 
 input {
-    box-shadow: 5px 5px 25px rgb(101, 98, 98);
+    box-shadow: 3px 3px 15px rgb(101, 98, 98);
+
     border-radius: 10px;
-    
+
     text-align: center;
     font-size: 35px;
-    
+
     width: 20%;
     height: 50px;
 
@@ -44,19 +46,20 @@ input {
 
 div.card {
     background-color: #537FE7;
-    box-shadow: 10px 15px 25px rgb(101, 98, 98);
+    box-shadow: 3px 3px 15px rgb(101, 98, 98);
     border-radius: 30px;
     font-size: 100%;
-    
+
     padding-left: 3%;
     padding-top: 1%;
 
     margin: auto;
 
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     width: 700px;
 
 }
+
 a#openinmaps {
     text-decoration: none;
     color: #0638ed;
@@ -78,16 +81,30 @@ footer {
 
 @media (max-width: 1000px) {
     input {
+        border-radius: 7px;
         width: 200px;
         font-size: 20px;
         height: 30px;
     }
+
     div.card {
-        width: 95%;
+        box-shadow: none;
+        border-radius: 0px;
+        width: 100%;
         font-size: 10px;
     }
 }
 
+/* ---------- */
+/*    ANIM    */
+/* ---------- */
+
+
 h2:hover {
     letter-spacing: 0.5px;
+}
+
+input:focus {
+    outline: none;
+
 }
