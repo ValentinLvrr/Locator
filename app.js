@@ -6,13 +6,13 @@ async function ping_time(address) {
     let startTime = (new Date()).getTime();
     await fetch(address)
     let endTime = (new Date()).getTime();
-    return endTime - startTime  
+    return endTime - startTime
 }
 
 async function resolve_dns(address) {
     let res = await fetch(DNS_RESOLVER + address)
     let data = await res.json()
-    return data['Answer']['0']['data']
+    return data.Answer['0'].data
 }
 
 async function request(ip) {
@@ -23,28 +23,28 @@ async function request(ip) {
 
 async function getValue() {
     let value = document.getElementById("ip-input").value
-    let checked
-    if (regex.test(value)) {
-        checked = await resolve_dns(value)
-    } else {
-        checked = value
-    }
-    let data = await request(checked)
+    let data
 
-    document.getElementById("address").innerHTML = "Address : " + data['ip']
-    document.getElementById("country").innerHTML = "Country : " + data['country_name']
-    document.getElementById("region").innerHTML = "Region : " + data['region']
-    document.getElementById("city").innerHTML = "City : " + data['city']
-    document.getElementById("zip-code").innerHTML = "Zip-Code : " + data['postal']
-    document.getElementById("lat").innerHTML = "Latitude : " + data['latitude']
-    document.getElementById("lon").innerHTML = "Longitude : " + data['longitude']
+    if (regex.test(value)) {
+        data = await request(await resolve_dns(value))
+    } else {
+        data = await request(value)
+    }
+
+    document.getElementById("address").innerHTML = `Address : ${data.ip}`
+    document.getElementById("country").innerHTML = `Country : ${data.country_name}`
+    document.getElementById("region").innerHTML = `Region : ${data.region}`
+    document.getElementById("city").innerHTML = `City : ${data.city}`
+    document.getElementById("zip-code").innerHTML = `Zip-Code : ${data.postal}`
+    document.getElementById("calling-code").innerHTML = `Calling Code : ${data.country_calling_code}`
+    document.getElementById("currency").innerHTML = `Currency : ${data.currency_name} ( ${data.currency} )`
+    document.getElementById("org").innerHTML = "Org : " + data['org']
+
     google_map = document.getElementById("openinmaps")
     google_map.innerHTML = "Open In Maps"
-    google_map.href = "https://www.google.com/maps/place/"+data['latitude']+"," +data['longitude']
+    google_map.href = "https://www.google.com/maps/place/" + data['latitude'] + "," + data['longitude']
 
-
-    let ping = await ping_time(value)
-    document.getElementById("ping").innerHTML = "Ping : " + ping + "ms"
+    document.getElementById("ping").innerHTML = "Ping : " + await ping_time(value) + "ms"
 }
 
 (function onload() {
