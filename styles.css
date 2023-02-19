@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Rubik', sans-serif;
-    background-color: #CFB997;
+    background-color: #181823;
     color: #141c3a;
     margin: 0;
 }
@@ -12,7 +12,7 @@ body {
 /* ----------------- */
 
 header {
-    background-color: #567189;
+    background-color: #537FE7;
     padding-top: 1px;
     margin-bottom: 40px;
     height: 100px;
@@ -43,8 +43,8 @@ input {
 /* ----------------- */
 
 div.card {
-    background-color: #7B8FA1;
-    box-shadow: 20px 30px 25px rgb(101, 98, 98);
+    background-color: #537FE7;
+    box-shadow: 10px 15px 25px rgb(101, 98, 98);
     border-radius: 30px;
     font-size: 100%;
     
@@ -59,7 +59,7 @@ div.card {
 }
 a#openinmaps {
     text-decoration: none;
-    color: #2548c6;
+    color: #0638ed;
 }
 
 /* ----------------- */
@@ -69,6 +69,7 @@ a#openinmaps {
 footer {
     margin-top: 50px;
     text-align: end;
+    color: beige;
 }
 
 /* ----------------- */
