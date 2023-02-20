@@ -2,6 +2,7 @@ const API = 'https://ipapi.co/'
 const DNS_RESOLVER = 'https://dns.google/resolve?name='
 const regex = /[a-zA-Z]/;
 
+
 async function ping_time(address) {
     let startTime = (new Date()).getTime();
     await fetch(address)

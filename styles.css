@@ -5,6 +5,7 @@ body {
     background-color: #181823;
     color: #141c3a;
     margin: 0;
+    user-select: none;
 }
 
 /* ----------------- */
@@ -46,6 +47,8 @@ input {
 
 div.card {
     background-color: #537FE7;
+    user-select: text;
+
     box-shadow: 3px 3px 15px rgb(101, 98, 98);
     border-radius: 30px;
     font-size: 100%;
@@ -101,7 +104,7 @@ footer {
 
 
 h2:hover {
-    letter-spacing: 0.5px;
+    padding-left: 3px;
 }
 
 input:focus {
