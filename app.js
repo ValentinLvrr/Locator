@@ -56,12 +56,11 @@ h2List.forEach((h2, index) => {
 
       navigator.clipboard.writeText(toCopy)
         .then(() => {
-          pop.currentTime = 0;
-          pop.play()
           event.target.innerHTML = `${splited[0]}: Copied !`
         })
-        .catch(() => {
+        .catch(err => {
           event.target.innerHTML = "Could not copy text"
+          console.log(err)
         })
 
       setTimeout(() => { event.target.innerHTML = content }, 750)

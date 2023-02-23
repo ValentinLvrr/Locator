@@ -56,10 +56,9 @@ input {
 #card {
   box-shadow: 20px 20px 20px rgb(48, 48, 48);
   background: linear-gradient(to right, rgb(146, 226, 244), rgb(51, 139, 147)); 
-
   border-radius: 15px;
   padding-bottom: 5px;
-  user-select: text;
+  user-select: none;
   color: #39446b;
   font-size: 100%;
   padding-left: 3%;
