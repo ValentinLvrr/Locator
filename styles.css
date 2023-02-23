@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
 body {
-    font-family: 'Rubik', sans-serif;
-    background-color: #181823;
-    color: #141c3a;
-    margin: 0;
-    user-select: none;
+  background: center center url(https://zupimages.net/up/23/08/cb1c.png)gray;
+  font-family: 'Rubik', sans-serif;
+  user-select: none;
+  color: #141c3a;
+  margin: 0;
 }
 
 /* ----------------- */
@@ -13,14 +13,26 @@ body {
 /* ----------------- */
 
 header {
-    background-color: #537FE7;
-    padding-top: 1px;
-    margin-bottom: 40px;
-    height: 110px;
+  background: linear-gradient(to right, rgb(146, 226, 244), rgb(51, 139, 147)); 
+  margin-bottom: 40px;
+  padding-top: 1px;
+  height: 110px;
+}
+
+#header-items {
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
+  width: 250px;
+  gap: 20px;
+}
+
+img.logo {
+  max-width: 40px;
 }
 
 h1.title {
-    font-size: 45px;
+  font-size: 45px;
 }
 
 /* ----------------- */
@@ -28,44 +40,37 @@ h1.title {
 /* ----------------- */
 
 input {
-    box-shadow: 3px 3px 15px rgb(101, 98, 98);
-
-    border-radius: 10px;
-
-    text-align: center;
-    font-size: 35px;
-
-    width: 20%;
-    height: 50px;
-
-    margin-bottom: 50px;
+  box-shadow: 10px 10px 10px rgb(48, 48, 48);
+  margin-bottom: 50px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 35px;
+  height: 50px;
+  width: 20%;
 }
 
 /* ----------------- */
 /*       CARD        */
 /* ----------------- */
 
-div.card {
-    background-color: #537FE7;
-    user-select: text;
+#card {
+  box-shadow: 20px 20px 20px rgb(48, 48, 48);
+  background: linear-gradient(to right, rgb(146, 226, 244), rgb(51, 139, 147)); 
 
-    box-shadow: 3px 3px 15px rgb(101, 98, 98);
-    border-radius: 30px;
-    font-size: 100%;
-
-    padding-left: 3%;
-    padding-top: 1%;
-
-    margin: auto;
-
-    padding-bottom: 5px;
-    width: 700px;
-
+  border-radius: 15px;
+  padding-bottom: 5px;
+  user-select: text;
+  color: #39446b;
+  font-size: 100%;
+  padding-left: 3%;
+  padding-top: 1%;
+  margin: auto;
+  width: 700px;
 }
 
 a#openinmaps {
-    text-decoration: none;
-    color: #0638ed;
+  text-decoration: none;
+  color: #0638ed;
 }
 
 /* ----------------- */
@@ -73,9 +78,10 @@ a#openinmaps {
 /* ----------------- */
 
 footer {
-    margin-top: 50px;
-    text-align: end;
-    color: beige;
+  margin-top: 50px;
+  text-align: end;
+  color: beige;
+  font-size: 15px;
 }
 
 /* ----------------- */
@@ -83,31 +89,35 @@ footer {
 /* ----------------- */
 
 @media (max-width: 1000px) {
-    input {
-        border-radius: 7px;
-        width: 200px;
-        font-size: 20px;
-        height: 30px;
-    }
+  input {
+    box-shadow: none;
+    border-radius: 7px;
+    font-size: 20px;
+    width: 200px;
+    height: 30px;
+  }
 
-    div.card {
-        box-shadow: none;
-        border-radius: 0px;
-        width: 100%;
-        font-size: 10px;
-    }
+  h2 {
+    color: #141c3a;
+  }
+
+  div#card {
+    border-radius: 0px;
+    box-shadow: none;
+    font-size: 10px;
+    width: 100%;
+  }
 }
 
 /* ---------- */
 /*    ANIM    */
 /* ---------- */
 
-
 h2:hover {
-    padding-left: 3px;
+  color: #141c3a;
+  padding-left: 3px;
 }
 
 input:focus {
-    outline: none;
-
+  outline: none;
 }
