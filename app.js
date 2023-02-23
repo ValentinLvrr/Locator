@@ -1,13 +1,7 @@
 const API = 'https://ipapi.co/'
 const DNS_RESOLVER = 'https://dns.google/resolve?name='
 const regex = /[a-zA-Z]/;
-
-
-
-function copy_content(id) {
-  value = document.getElementById.innerHTML
-  console.log(value)
-}
+const h2List = document.querySelectorAll('h2')
 
 async function ping_time(address) {
   let startTime = (new Date()).getTime();
@@ -28,14 +22,16 @@ async function request(ip) {
   return data
 }
 
-async function getValue() {
-  let value = document.getElementById("ip-input").value
-  let data
+async function main() {
 
-  if (regex.test(value)) {
-    data = await request(await resolve_dns(value))
-  } else {
-    data = await request(value)
+  let value = document.getElementById("ip-input").value
+  switch (regex.test(value)) {
+    case true:
+      var data = await request(await resolve_dns(value))
+      break
+    case false:
+      var data = await request(value)
+      break
   }
 
   document.getElementById("address").innerHTML = `Address : ${data.ip}`
@@ -46,14 +42,31 @@ async function getValue() {
   document.getElementById("calling-code").innerHTML = `Calling Code : ${data.country_calling_code}`
   document.getElementById("currency").innerHTML = `Currency : ${data.currency_name} ( ${data.currency} )`
   document.getElementById("org").innerHTML = "Org : " + data['org']
-
-  google_map = document.getElementById("openinmaps")
-  google_map.innerHTML = "Open In Maps"
-  google_map.href = "https://www.google.com/maps/place/" + data['latitude'] + "," + data['longitude']
-
+  document.getElementById("openinmaps").innerHTML = "Open In Maps"
+  document.getElementById("openinmaps").href = "https://www.google.com/maps/place/" + data['latitude'] + "," + data['longitude']
   document.getElementById("ping").innerHTML = "Ping : " + await ping_time(value) + "ms"
 }
 
-(function onload() {
-  getValue()
-})()
+h2List.forEach((h2, index) => {
+  if (index < h2List.length - 1) {
+    h2.addEventListener('click', function (event) {
+      let content = event.target.innerHTML
+      let splited = content.split(': ')
+      let toCopy = splited[1]
+
+      navigator.clipboard.writeText(toCopy)
+        .then(() => {
+          pop.currentTime = 0;
+          pop.play()
+          event.target.innerHTML = `${splited[0]}: Copied !`
+        })
+        .catch(() => {
+          event.target.innerHTML = "Could not copy text"
+        })
+
+      setTimeout(() => { event.target.innerHTML = content }, 750)
+    });
+  }
+});
+
+main()

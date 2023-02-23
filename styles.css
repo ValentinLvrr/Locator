@@ -68,6 +68,10 @@ input {
   width: 700px;
 }
 
+#card h2 {
+  cursor: pointer;
+}
+
 a#openinmaps {
   text-decoration: none;
   color: #0638ed;
@@ -78,10 +82,9 @@ a#openinmaps {
 /* ----------------- */
 
 footer {
-  margin-top: 50px;
-  text-align: end;
+  text-align: center;
   color: beige;
-  font-size: 15px;
+  font-size: 30px;
 }
 
 /* ----------------- */
