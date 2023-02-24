@@ -54,6 +54,8 @@ input {
 /* ----------------- */
 
 #card {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
   box-shadow: 20px 20px 20px rgb(48, 48, 48);
   background: linear-gradient(to right, rgb(146, 226, 244), rgb(51, 139, 147)); 
   border-radius: 15px;
@@ -116,10 +118,22 @@ footer {
 /* ---------- */
 
 h2:hover {
+  animation: hover-element 0.5s;
+  padding-left: 10px;
   color: #141c3a;
-  padding-left: 3px;
 }
 
 input:focus {
   outline: none;
+}
+
+@keyframes hover-element {
+  from {
+    color: #39446b;
+    padding-left: 0px;
+  }
+  to {
+    color: #141c3a;
+    padding-left: 10px;
+  }
 }

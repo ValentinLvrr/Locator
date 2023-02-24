@@ -2,6 +2,7 @@ const API = 'https://ipapi.co/'
 const DNS_RESOLVER = 'https://dns.google/resolve?name='
 const regex = /[a-zA-Z]/;
 const h2List = document.querySelectorAll('h2')
+const card_opacity = document.getElementById('card')
 
 async function ping_time(address) {
   let startTime = (new Date()).getTime();
@@ -23,7 +24,7 @@ async function request(ip) {
 }
 
 async function main() {
-
+  card.style.opacity = "0"
   let value = document.getElementById("ip-input").value
   switch (regex.test(value)) {
     case true:
@@ -45,6 +46,8 @@ async function main() {
   document.getElementById("openinmaps").innerHTML = "Open In Maps"
   document.getElementById("openinmaps").href = "https://www.google.com/maps/place/" + data['latitude'] + "," + data['longitude']
   document.getElementById("ping").innerHTML = "Ping : " + await ping_time(value) + "ms"
+  
+  card.style.opacity = "1"
 }
 
 h2List.forEach((h2, index) => {
