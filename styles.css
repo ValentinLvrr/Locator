@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
 body {
-  background: center center url(https://zupimages.net/up/23/08/cb1c.png)gray;
+  background: center center url(https://zupimages.net/up/23/08/cb1c.png)rgb(138, 138, 138);
   font-family: 'Rubik', sans-serif;
   user-select: none;
   color: #141c3a;
@@ -13,7 +13,9 @@ body {
 /* ----------------- */
 
 header {
-  background: linear-gradient(to right, rgb(146, 226, 244), rgb(51, 139, 147)); 
+  background: linear-gradient(to right, rgb(146, 226, 244), #16A34A); 
+  box-shadow: 0px 15px 10px rgb(101, 101, 101);
+
   margin-bottom: 40px;
   padding-top: 1px;
   height: 110px;
@@ -40,7 +42,7 @@ h1.title {
 /* ----------------- */
 
 input {
-  box-shadow: 10px 10px 10px rgb(48, 48, 48);
+  box-shadow: 10px 10px 10px rgb(101, 101, 101);
   margin-bottom: 50px;
   border-radius: 10px;
   text-align: center;
@@ -56,8 +58,8 @@ input {
 #card {
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
-  box-shadow: 20px 20px 20px rgb(48, 48, 48);
-  background: linear-gradient(to right, rgb(146, 226, 244), rgb(51, 139, 147)); 
+  box-shadow: 20px 20px 20px rgb(101, 101, 101);
+  background: linear-gradient(to right, rgb(146, 226, 244), #16A34A); 
   border-radius: 15px;
   padding-bottom: 5px;
   user-select: none;
@@ -121,6 +123,7 @@ h2:hover {
   animation: hover-element 0.5s;
   padding-left: 10px;
   color: #141c3a;
+  
 }
 
 input:focus {
@@ -137,3 +140,5 @@ input:focus {
     padding-left: 10px;
   }
 }
+
+ 
