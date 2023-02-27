@@ -4,35 +4,32 @@ const regex = /[a-zA-Z]/;
 const h2List = document.querySelectorAll('h2')
 const card_opacity = document.getElementById('card')
 
-async function ping_time(address) {
+const ping_time = async (address) => {
   let startTime = (new Date()).getTime();
   await fetch(address)
   let endTime = (new Date()).getTime();
   return endTime - startTime
 }
 
-async function resolve_dns(address) {
+const resolve_dns = async (address) => {
   let res = await fetch(DNS_RESOLVER + address)
   let data = await res.json()
   return data.Answer['0'].data
 }
 
-async function request(ip) {
+const request_api = async (ip) => {
   let res = await fetch(API + ip + "/json/")
   let data = await res.json()
   return data
 }
 
-async function main() {
+const main = async () => {
   card.style.opacity = "0"
   let value = document.getElementById("ip-input").value
-  switch (regex.test(value)) {
-    case true:
-      var data = await request(await resolve_dns(value))
-      break
-    case false:
-      var data = await request(value)
-      break
+  if (regex.test(value)) {
+    var data = await request_api(await resolve_dns(value))
+  } else {
+    var data = await request_api(value)
   }
 
   document.getElementById("address").innerHTML = `Address : ${data.ip}`
