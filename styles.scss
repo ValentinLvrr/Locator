@@ -1,0 +1,139 @@
+$gradient: linear-gradient(145deg, rgba(115, 115, 115, 0.15) 15%, #2b2d2f 80%);
+$box_shadow: 5px 5px 4px #161718, -5px -5px 4px #404346;
+$title_color: #f43f63;
+$text_color: whitesmoke;
+$clickable_color: rgb(239, 136, 136);
+$font-family: 'Raleway', sans-serif;
+
+@import "https://fonts.googleapis.com/css?family=Raleway&display=swap";
+
+body {
+    background: center center url(https://zupimages.net/up/23/08/cb1c.png)#2B2D2F;
+    overflow: hidden;
+    font-family: $font-family;
+    user-select: none;
+    color: $text_color;
+    margin: 0;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+header {
+    color: $title_color;
+    text-shadow: 0.15rem 0.15rem 0.15rem #b92c49;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    padding-top: 1px;
+    height: 110px;
+
+    div {
+        align-items: center;
+        margin: 0 auto;
+        display: flex;
+        width: 250px;
+        gap: 20px;
+    }
+    h1 {
+        font-size: 45px;
+    }
+
+    img {
+        max-width: 40px;
+    }
+
+}
+
+input {
+    box-shadow: $box_shadow;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    background: $gradient;
+    color: $text_color;
+    font-family: $font-family;
+    text-align: center;
+    font-size: 35px;
+    height: 50px;
+    width: 20%;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+#card {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    box-shadow: $box_shadow;
+    background: $gradient;
+    border-radius: 15px;
+    padding-bottom: 5px;
+    user-select: none;
+    
+    font-size: 100%;
+    padding-left: 3%;
+    padding-top: 1%;
+    margin: auto;
+    width: 700px;
+
+    h2 {
+        color: $text_color;
+        cursor: pointer;
+
+        a {
+            color: $clickable_color;
+        }
+
+        &:hover {
+            animation: hover-element 0.5s;
+            padding-left: 3px;
+            color: $clickable_color;
+        }
+        
+    }
+
+    
+}
+
+footer {
+    h6 {
+        text-align: center;
+
+        a {
+            font-size: 2em;
+            color: $clickable_color;
+
+            &:hover {
+                opacity: 0.4;
+            }
+        }
+    }
+}
+
+@keyframes hover-element {
+    from {
+        color: $text_color;
+        padding-left: 0px;
+    }
+
+    to {
+        color: $clickable_color;
+        padding-left: 3px;
+    }
+}
+
+@media (max-width: 1000px) {
+    input {
+        border-radius: 7px;
+        font-size: 20px;
+        width: 200px;
+        height: 30px;
+    }
+
+    #card {
+        border-radius: 0px;
+        font-size: 10px;
+        width: 100%;
+    }
+}

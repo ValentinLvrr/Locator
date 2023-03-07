@@ -1,18 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
-@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
-
+@import "https://fonts.googleapis.com/css?family=Raleway&display=swap";
 body {
-  background: center center url(https://zupimages.net/up/23/08/cb1c.png)#2B2D2F;
+  background: center center url(https://zupimages.net/up/23/08/cb1c.png) #2B2D2F;
   overflow: hidden;
-  font-family: 'Raleway', sans-serif;
-  user-select: none;
-  color: #141c3a;
+  font-family: "Raleway", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: whitesmoke;
   margin: 0;
 }
-
-/* ----------------- */
-/*      HEADER       */
-/* ----------------- */
+body a {
+  text-decoration: none;
+}
 
 header {
   color: #f43f63;
@@ -22,123 +21,79 @@ header {
   padding-top: 1px;
   height: 110px;
 }
-
-#header-items {
+header div {
   align-items: center;
   margin: 0 auto;
   display: flex;
   width: 250px;
   gap: 20px;
 }
-
-img.logo {
-  max-width: 40px;
-}
-
-h1.title {
+header h1 {
   font-size: 45px;
 }
-
-/* ----------------- */
-/*       INPUT       */
-/* ----------------- */
+header img {
+  max-width: 40px;
+}
 
 input {
   box-shadow: 5px 5px 4px #161718, -5px -5px 4px #404346;
   margin-bottom: 50px;
   border-radius: 10px;
-  background: linear-gradient(145deg, rgba(115,115,115,0.15) 15%, #2b2d2f 80%);
+  background: linear-gradient(145deg, rgba(115, 115, 115, 0.15) 15%, #2b2d2f 80%);
   color: whitesmoke;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   text-align: center;
   font-size: 35px;
   height: 50px;
   width: 20%;
 }
-
-/* ----------------- */
-/*       CARD        */
-/* ----------------- */
+input:focus {
+  outline: none;
+}
 
 #card {
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
   box-shadow: 5px 5px 4px #161718, -5px -5px 4px #404346;
-  background: linear-gradient(145deg, rgba(115,115,115,0.15) 15%, #2b2d2f 80%);
+  background: linear-gradient(145deg, rgba(115, 115, 115, 0.15) 15%, #2b2d2f 80%);
   border-radius: 15px;
   padding-bottom: 5px;
-  user-select: none;
-  color: whitesmoke;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   font-size: 100%;
   padding-left: 3%;
   padding-top: 1%;
   margin: auto;
   width: 700px;
 }
-
 #card h2 {
+  color: whitesmoke;
   cursor: pointer;
 }
-
-a#openinmaps {
-  text-decoration: none;
+#card h2 a {
   color: rgb(239, 136, 136);
 }
-
-/* ----------------- */
-/*      FOOTER       */
-/* ----------------- */
-
-footer {
-  text-align: center;
-  color: whitesmoke;
-  font-size: 30px;
-}
-
-/* ----------------- */
-/*     RESPONSIVE    */
-/* ----------------- */
-
-@media (max-width: 1000px) {
-  input {
-    border-radius: 7px;
-    font-size: 20px;
-    width: 200px;
-    height: 30px;
-  }
-
-  h2 {
-    color: whitesmoke;
-  }
-
-  div#card {
-    border-radius: 0px;
-    font-size: 10px;
-    width: 100%;
-  }
-}
-
-/* ---------- */
-/*    ANIM    */
-/* ---------- */
-
-h2:hover {
+#card h2:hover {
   animation: hover-element 0.5s;
   padding-left: 3px;
   color: rgb(239, 136, 136);
 }
 
-h6:hover {
-  letter-spacing: 1px;
+footer h6 {
+  text-align: center;
 }
-
-input:focus {
-  outline: none;
+footer h6 a {
+  font-size: 2em;
+  color: rgb(239, 136, 136);
+}
+footer h6 a:hover {
+  opacity: 0.4;
 }
 
 @keyframes hover-element {
   from {
-    color: white;
+    color: whitesmoke;
     padding-left: 0px;
   }
   to {
@@ -146,5 +101,16 @@ input:focus {
     padding-left: 3px;
   }
 }
-
- 
+@media (max-width: 1000px) {
+  input {
+    border-radius: 7px;
+    font-size: 20px;
+    width: 200px;
+    height: 30px;
+  }
+  #card {
+    border-radius: 0px;
+    font-size: 10px;
+    width: 100%;
+  }
+}/*# sourceMappingURL=styles.css.map */
